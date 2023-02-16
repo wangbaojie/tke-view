@@ -1,0 +1,26 @@
+{
+  "name": "tke-view",
+  "version": "1.0.0",
+  "description": "View local development environment.",
+  "main": "index.js",
+  "author": "rt.wadewang@rayootech.com",
+  "license": "ISC",
+  "repository": "git@github.com:wqf100124/tke-view.git",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "build:ubuntu": "docker build -t rtwadewang/view:1.0.2 -t rtwadewang/view:latest --no-cache ./ubuntu",
+    "build:alpine": "docker build -t rtwadewang/view:1.0.2-alpine -t rtwadewang/view:alpine --no-cache ./alpine",
+    "build:autotest": "docker build -t rtwadewang/autotest:1.0.2 -t rtwadewang/autotest:latest --no-cache ./autotest"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.46",
+    "vitepress-plugin-mermaid": "^2.0.8",
+    "@mermaid-js/mermaid-mindmap": "^9.3.0",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "mermaid": "9.1.7"
+  }
+}
