@@ -30,7 +30,7 @@ preview
 
 1.在本地创建一个名为 `docker-compose.yml` 的文件，并复制粘贴以下内容。
 
-```yaml{29,36}
+```yaml{30,37,44}
 version: "3"
 services:
   view:
@@ -39,6 +39,7 @@ services:
     volumes:
       - sites:/home/tke/sites
       - local:/home/tke/local
+      # - preview:/home/tke/preview
     networks:
       tke:
         ipv4_address: 172.16.1.80
@@ -67,6 +68,13 @@ volumes:
       type: none
       o: bind
       device: local代码路径
+  # preview:
+  #   name: preview
+  #   driver: local
+  #   driver_opts:
+  #     type: none
+  #     o: bind
+  #     device: preview代码路径
 ```
 以上配置仅包含 View 容器。完整配置请参考：[View Docker Compose](/compose)
 
